@@ -1,0 +1,47 @@
+propel:
+  user:
+    id:           ~
+    email:        { type: varchar(255), required: true, index: unique }
+    password:     { type: varchar(255), required: true }
+    name:         { type: varchar(255), required: true, index: unique }
+    balance:      { type: integer, required: true }
+    status:       { type: integer, required: true }
+    created_at:    ~
+
+  group:
+    id:           ~
+    name:         { type: varchar(255), required: true, index: unique }
+    captain:      { type: integer, foreignTable: user, foreignReference: id, required: true }
+    status:       { type: integer, required: true }
+    created_at:    ~
+
+  group_user:
+    id:           ~
+    group_id:     { type: integer, foreignTable: group, foreignReference: id, required: true }
+    user_id:      { type: integer, foreignTable: user, foreignReference: id, required: true }
+    created_at:    ~
+
+  activity:
+    id:           ~
+    desc:         { type: longvarchar, required: true }
+    cost:         { type: integer, required: true }
+    status:       { type: integer, required: true }
+    created_at:    ~
+
+  activity_user:
+    id:           ~
+    activity_id:  { type: integer, foreignTable: activity, foreignReference: id, required: true }
+    user_id:      { type: integer, foreignTable: user, foreignReference: id, required: true }
+    cost:         { type: integer, required: true }
+
+  user_charge_history:
+    id:           ~
+    user_id:      { type: integer, foreignTable: user, foreignReference: id, required: true }
+    price:        { type: integer, required: true }
+    created_at:    ~
+
+  user_consume_history:
+    id:           ~
+    user_id:      { type: integer, foreignTable: user, foreignReference: id, required: true }
+    price:        { type: integer, required: true }
+    created_at:    ~
