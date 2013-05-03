@@ -1,0 +1,25 @@
+user:
+  john:
+    email:       john@example.com
+    password:    abc123
+    name:        john
+    balance:     2000
+    status:      1
+  sam:
+    email:       sam@example.com
+    password:    abc123
+    name:        sam
+    balance:     1000
+    status:      1
+  sally:
+    email:       sally@company.com
+    password:    abc123
+    name:        sally
+    balance:     2500
+    status:      1
+  terry:
+    email:       terry@company.com
+    password:    abc123
+    name:        terry
+    balance:     3000
+    status:      1
