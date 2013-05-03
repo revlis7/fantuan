@@ -1,0 +1,11 @@
+# Log and cache      #
+######################
+cache/
+log/
+*.log
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+Thumbs.db
