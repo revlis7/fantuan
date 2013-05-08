@@ -31,6 +31,13 @@ all:
     # Cache settings
     lazy_cache_key:         on        # Delays creation of a cache key until after checking whether an action or partial is cacheable
 
+  .actions:
+    login_module:           default
+    login_action:           login
+
+    secure_module:          default
+    secure_action:          secure
+
 #all:
 #  .actions:
 #    error_404_module:       default   # To be called when a 404 error is raised

@@ -19,7 +19,11 @@ class userActions extends sfActions
 
   public function executeComplete()
   {
-    echo $this->getUser()->getInfo();
+    $user = $this->getUser();
+    $user->setAuthenticated(true);
+    $user->addCredential('B');
+    // $user->clearCredentials();
+    echo $user->getInfo();
   }
 
   protected function processForm(sfWebRequest $request, sfForm $form)
