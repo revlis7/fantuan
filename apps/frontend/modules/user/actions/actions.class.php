@@ -4,8 +4,6 @@ class userActions extends sfActions
 {
   public function executeRegister(sfWebRequest $request)
   {
-    $this->getUser()->setInfo();
-
     $user = new User();
     $this->form = new UserForm($user);
   }
@@ -21,9 +19,6 @@ class userActions extends sfActions
   {
     $user = $this->getUser();
     $user->setAuthenticated(true);
-    $user->addCredential('B');
-    // $user->clearCredentials();
-    echo $user->getInfo();
   }
 
   protected function processForm(sfWebRequest $request, sfForm $form)
