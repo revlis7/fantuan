@@ -6,6 +6,10 @@ class userActions extends sfActions
   {
     $user = new User();
     $this->form = new UserForm($user);
+    $this->status = 'USER LOGGED OUT';
+    if ($this->getUser()->isAuthenticated()) {
+      $this->status = 'USER LOGGED IN';
+    }
   }
 
   public function executeCreate(sfWebRequest $request)
@@ -17,8 +21,16 @@ class userActions extends sfActions
 
   public function executeComplete()
   {
-    $user = $this->getUser();
-    $user->setAuthenticated(true);
+    $session = $this->getUser();
+    $session->setAuthenticated(true);
+  }
+
+  public function executeMain()
+  {
+    $session = $this->getUser();
+    if (!$session->isAuthenticated()) {
+      $this->redirect('login');
+    }
   }
 
   protected function processForm(sfWebRequest $request, sfForm $form)
