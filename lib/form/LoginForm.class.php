@@ -8,5 +8,10 @@ class LoginForm extends sfForm
       'email'    => new sfWidgetFormInput(),
       'password' => new sfWidgetFormInputPassword(),
     ));
+    $this->widgetSchema->setNameFormat('login[%s]');
+
+    $this->setValidators(array(
+      'email' => new sfValidatorEmail(),
+    ));
   }
 }

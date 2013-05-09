@@ -2,7 +2,7 @@
 
 class loginActions extends sfActions
 {
-  public function executeIndex()
+  public function executeIndex(sfWebRequest $request)
   {
     if ($this->getUser()->isAuthenticated()) {
       $this->redirect('user/main');
@@ -10,8 +10,16 @@ class loginActions extends sfActions
     $this->form = new LoginForm();
   }
 
-  public function executeSubmit()
+  public function executeSubmit(sfWebRequest $request)
   {
-    echo 'submit';exit;
+    $this->form = new LoginForm();
+    $this->form->bind($request->getParameter('login'));
+    if (!$this->form->isValid()) {
+      $this->setTemplate('index');
+    } else {
+      $login = $request->getParameter('login');
+      var_dump($login);
+      echo 'submit';
+    }
   }
 }
