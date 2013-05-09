@@ -7,5 +7,11 @@ class loginActions extends sfActions
     if ($this->getUser()->isAuthenticated()) {
       $this->redirect('user/main');
     }
+    $this->form = new LoginForm();
+  }
+
+  public function executeSubmit()
+  {
+    echo 'submit';exit;
   }
 }
