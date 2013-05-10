@@ -1,5 +1,5 @@
 <h1>form</h1>
-<form action="<?php echo url_for('user/create') ?>" method="post">
+<form action="<?php echo url_for('user/register') ?>" method="post">
   <table>
     <tfoot>
       <tr>

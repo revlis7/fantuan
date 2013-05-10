@@ -1,1 +1,0 @@
-<h1>register complete</h1>

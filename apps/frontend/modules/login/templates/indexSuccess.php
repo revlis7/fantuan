@@ -1,5 +1,5 @@
 <h1>login</h1>
-<form action="<?php echo url_for('login/submit') ?>" method="post">
+<form action="<?php echo url_for('login/index') ?>" method="post">
   <table>
     <?php echo $form ?>
     <tr>
