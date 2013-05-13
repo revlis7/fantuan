@@ -12,8 +12,12 @@ class loginActions extends sfActions
     if ($request->isMethod('post')) {
       $this->form->bind($request->getParameter('login'));
       if ($this->form->isValid()) {
-        $this->getUser()->setAuthenticated(true);
-        $this->redirect('user/main');
+        $email    = $this->form->getValue('email');
+        $password = $this->form->getValue('password');
+        if (UserPeer::verifyUser($email, $password)) {
+          $this->getUser()->setAuthenticated(true);
+          $this->redirect('user/main');
+        }
       }
     }
   }
