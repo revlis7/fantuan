@@ -7,6 +7,13 @@ class UserPeer extends BaseUserPeer
 
   const INIT_BAL = 0;
 
+  public static function getUserByEmail($email)
+  {
+    $criteria = new Criteria();
+    $criteria->add(self::EMAIL, $email);
+    return self::doSelectOne($criteria);
+  }
+
   public static function verifyUser($email, $password)
   {
     $criteria = new Criteria();
