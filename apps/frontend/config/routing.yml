@@ -1,3 +1,11 @@
+group:
+  url:   /group/:name
+  param: { module: group, action: index }
+
+logout:
+  url:   /logout
+  param: { module: logout, action: index }
+
 # default rules
 homepage:
   url:   /
