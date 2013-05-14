@@ -11,6 +11,9 @@ class userActions extends sfActions
     $email = $this->getUser()->getAttribute('email');
     $user = UserPeer::getUserByEmail($email);
 
+    $this->charged_groups = $user->getChargedGroups();
+    $this->joined_groups  = $user->getJoinedGroups();
+
     $this->name    = $user->getName();
     $this->balance = $user->getBalance();
   }
