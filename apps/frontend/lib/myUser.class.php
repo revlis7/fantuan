@@ -2,13 +2,21 @@
 
 class myUser extends sfBasicSecurityUser
 {
-  public function setInfo()
+  public function login($name)
   {
-    $this->setAttribute('info', 'hey jude');
+    $user = UserPeer::getByName($name);
+    $this->getAttributeHolder()->clear();
+    $this->setAttribute('id', $user->getId());
+    $this->setAttribute('email', $user->getEmail());
+    $this->setAttribute('name', $user->getName());
+    $this->setAuthenticated(true);
+    return true;
   }
 
-  public function getInfo()
+  public function logout()
   {
-    return $this->getAttribute('info');
+    $this->getAttributeHolder()->clear();
+    $this->setAuthenticated(false);
+    return true;
   }
 }

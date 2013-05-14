@@ -4,8 +4,7 @@ class logoutActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->getUser()->getAttributeHolder()->clear();
-    $this->getUser()->setAuthenticated(false);
+    $this->getUser()->logout();
     $this->redirect('login/index');
   }
 }

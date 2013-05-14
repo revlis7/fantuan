@@ -17,9 +17,8 @@ class registerActions extends sfActions
         $user->setPassword($values['password']);
         $user->save();
 
-        $this->getUser()->setAuthenticated(true);
-
-        $this->redirect('user/index');
+        $this->getUser()->login($user->getName());
+        $this->redirect('@user?name='.$user->getName());
       }
     }
   }

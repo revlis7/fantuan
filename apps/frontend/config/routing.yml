@@ -1,6 +1,14 @@
+user:
+  url:   /user/:name
+  param: { module: user, action: index }
+
 group:
   url:   /group/:name
   param: { module: group, action: index }
+
+login:
+  url:   /login
+  param: { module: login, action: index }
 
 logout:
   url:   /logout

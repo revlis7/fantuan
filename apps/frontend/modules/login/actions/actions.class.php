@@ -5,7 +5,7 @@ class loginActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     if ($this->getUser()->isAuthenticated()) {
-      $this->redirect('user/index');
+      $this->redirect('@user?name='.$this->getUser()->getAttribute('name'));
     }
     $this->form = new LoginForm();
 
@@ -15,12 +15,9 @@ class loginActions extends sfActions
         $email    = $this->form->getValue('email');
         $password = $this->form->getValue('password');
         if (UserPeer::verifyUser($email, $password)) {
-          $this->getUser()->setAuthenticated(true);
-          $user = UserPeer::getUserByEmail($email);
-          $this->getUser()->setAttribute('id', $user->getId());
-          $this->getUser()->setAttribute('email', $user->getEmail());
-          $this->getUser()->setAttribute('name', $user->getName());
-          $this->redirect('user/index');
+          $user = UserPeer::getByEmail($email);
+          $this->getUser()->login($user->getName());
+          $this->redirect('@user?name='.$user->getName());
         }
       }
     }
