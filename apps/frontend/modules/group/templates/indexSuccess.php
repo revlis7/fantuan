@@ -1,8 +1,11 @@
 <p>Group: <strong><?php echo $group; ?></strong></p>
-<p>Captain: <strong><a href="<?php echo url_for('@user?name='.$captain); ?>"><?php echo $captain; ?></a></strong></p>
+
 <p>Members: </p>
 <ul>
+  <li><strong><a href="<?php echo url_for('@user?name='.$captain); ?>"><?php echo $captain; ?></a></strong> - captain</li>
 <?php foreach ($members as $member): ?>
+  <?php if ($member != $captain): ?>
   <li><strong><a href="<?php echo url_for('@user?name='.$member); ?>"><?php echo $member; ?></a></strong></li>
+  <?php endif; ?>
 <?php endforeach; ?>
 </ul>

@@ -17,6 +17,7 @@ class User extends BaseUser
     $criteria = new Criteria();
     $criteria->addJoin(UserPeer::ID, GroupPeer::CAPTAIN);
     $criteria->add(UserPeer::ID, $this->getId());
+    $criteria->addAscendingOrderByColumn(GroupPeer::NAME);
 
     return GroupPeer::doSelect($criteria);
   }
@@ -26,6 +27,7 @@ class User extends BaseUser
     $criteria = new Criteria();
     $criteria->addJoin(GroupUserPeer::GROUP_ID, GroupPeer::ID);
     $criteria->add(GroupUserPeer::USER_ID, $this->getId());
+    $criteria->addAscendingOrderByColumn(GroupPeer::NAME);
 
     return GroupPeer::doSelect($criteria);
   }
