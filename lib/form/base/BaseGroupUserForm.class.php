@@ -13,15 +13,15 @@ class BaseGroupUserForm extends BaseFormPropel
   {
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
-      'group_id'   => new sfWidgetFormPropelChoice(array('model' => 'Group', 'add_empty' => false)),
-      'user_id'    => new sfWidgetFormPropelChoice(array('model' => 'User', 'add_empty' => false)),
+      'group_id'   => new sfWidgetFormInput(),
+      'user_id'    => new sfWidgetFormInput(),
       'created_at' => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
       'id'         => new sfValidatorPropelChoice(array('model' => 'GroupUser', 'column' => 'id', 'required' => false)),
-      'group_id'   => new sfValidatorPropelChoice(array('model' => 'Group', 'column' => 'id')),
-      'user_id'    => new sfValidatorPropelChoice(array('model' => 'User', 'column' => 'id')),
+      'group_id'   => new sfValidatorInteger(),
+      'user_id'    => new sfValidatorInteger(),
       'created_at' => new sfValidatorDateTime(array('required' => false)),
     ));
 

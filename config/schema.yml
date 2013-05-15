@@ -11,14 +11,14 @@ propel:
   group:
     id:           ~
     name:         { type: varchar(255), required: true, index: unique }
-    captain:      { type: integer, foreignTable: user, foreignReference: id, required: true }
+    captain:      { type: integer, required: true }
     status:       { type: integer, required: true }
     created_at:    ~
 
   group_user:
     id:           ~
-    group_id:     { type: integer, foreignTable: group, foreignReference: id, required: true }
-    user_id:      { type: integer, foreignTable: user, foreignReference: id, required: true }
+    group_id:     { type: integer, required: true }
+    user_id:      { type: integer, required: true }
     created_at:    ~
 
   activity:
@@ -30,18 +30,18 @@ propel:
 
   activity_user:
     id:           ~
-    activity_id:  { type: integer, foreignTable: activity, foreignReference: id, required: true }
-    user_id:      { type: integer, foreignTable: user, foreignReference: id, required: true }
+    activity_id:  { type: integer, required: true }
+    user_id:      { type: integer, required: true }
     cost:         { type: integer, required: true }
 
   user_charge_history:
     id:           ~
-    user_id:      { type: integer, foreignTable: user, foreignReference: id, required: true }
+    user_id:      { type: integer, required: true }
     price:        { type: integer, required: true }
     created_at:    ~
 
   user_consume_history:
     id:           ~
-    user_id:      { type: integer, foreignTable: user, foreignReference: id, required: true }
+    user_id:      { type: integer, required: true }
     price:        { type: integer, required: true }
     created_at:    ~

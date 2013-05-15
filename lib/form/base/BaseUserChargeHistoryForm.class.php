@@ -13,14 +13,14 @@ class BaseUserChargeHistoryForm extends BaseFormPropel
   {
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
-      'user_id'    => new sfWidgetFormPropelChoice(array('model' => 'User', 'add_empty' => false)),
+      'user_id'    => new sfWidgetFormInput(),
       'price'      => new sfWidgetFormInput(),
       'created_at' => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
       'id'         => new sfValidatorPropelChoice(array('model' => 'UserChargeHistory', 'column' => 'id', 'required' => false)),
-      'user_id'    => new sfValidatorPropelChoice(array('model' => 'User', 'column' => 'id')),
+      'user_id'    => new sfValidatorInteger(),
       'price'      => new sfValidatorInteger(),
       'created_at' => new sfValidatorDateTime(array('required' => false)),
     ));

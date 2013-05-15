@@ -14,13 +14,13 @@ class BaseUserConsumeHistoryFormFilter extends BaseFormFilterPropel
   public function setup()
   {
     $this->setWidgets(array(
-      'user_id'    => new sfWidgetFormPropelChoice(array('model' => 'User', 'add_empty' => true)),
+      'user_id'    => new sfWidgetFormFilterInput(),
       'price'      => new sfWidgetFormFilterInput(),
       'created_at' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'user_id'    => new sfValidatorPropelChoice(array('required' => false, 'model' => 'User', 'column' => 'id')),
+      'user_id'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'price'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'created_at' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
     ));
@@ -41,7 +41,7 @@ class BaseUserConsumeHistoryFormFilter extends BaseFormFilterPropel
   {
     return array(
       'id'         => 'Number',
-      'user_id'    => 'ForeignKey',
+      'user_id'    => 'Number',
       'price'      => 'Number',
       'created_at' => 'Date',
     );

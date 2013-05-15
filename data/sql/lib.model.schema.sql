@@ -39,11 +39,7 @@ CREATE TABLE `group`
 	`status` INTEGER  NOT NULL,
 	`created_at` DATETIME,
 	PRIMARY KEY (`id`),
-	UNIQUE KEY `group_U_1` (`name`),
-	INDEX `group_FI_1` (`captain`),
-	CONSTRAINT `group_FK_1`
-		FOREIGN KEY (`captain`)
-		REFERENCES `user` (`id`)
+	UNIQUE KEY `group_U_1` (`name`)
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
@@ -59,15 +55,7 @@ CREATE TABLE `group_user`
 	`group_id` INTEGER  NOT NULL,
 	`user_id` INTEGER  NOT NULL,
 	`created_at` DATETIME,
-	PRIMARY KEY (`id`),
-	INDEX `group_user_FI_1` (`group_id`),
-	CONSTRAINT `group_user_FK_1`
-		FOREIGN KEY (`group_id`)
-		REFERENCES `group` (`id`),
-	INDEX `group_user_FI_2` (`user_id`),
-	CONSTRAINT `group_user_FK_2`
-		FOREIGN KEY (`user_id`)
-		REFERENCES `user` (`id`)
+	PRIMARY KEY (`id`)
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
@@ -100,15 +88,7 @@ CREATE TABLE `activity_user`
 	`activity_id` INTEGER  NOT NULL,
 	`user_id` INTEGER  NOT NULL,
 	`cost` INTEGER  NOT NULL,
-	PRIMARY KEY (`id`),
-	INDEX `activity_user_FI_1` (`activity_id`),
-	CONSTRAINT `activity_user_FK_1`
-		FOREIGN KEY (`activity_id`)
-		REFERENCES `activity` (`id`),
-	INDEX `activity_user_FI_2` (`user_id`),
-	CONSTRAINT `activity_user_FK_2`
-		FOREIGN KEY (`user_id`)
-		REFERENCES `user` (`id`)
+	PRIMARY KEY (`id`)
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
@@ -124,11 +104,7 @@ CREATE TABLE `user_charge_history`
 	`user_id` INTEGER  NOT NULL,
 	`price` INTEGER  NOT NULL,
 	`created_at` DATETIME,
-	PRIMARY KEY (`id`),
-	INDEX `user_charge_history_FI_1` (`user_id`),
-	CONSTRAINT `user_charge_history_FK_1`
-		FOREIGN KEY (`user_id`)
-		REFERENCES `user` (`id`)
+	PRIMARY KEY (`id`)
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
@@ -144,11 +120,7 @@ CREATE TABLE `user_consume_history`
 	`user_id` INTEGER  NOT NULL,
 	`price` INTEGER  NOT NULL,
 	`created_at` DATETIME,
-	PRIMARY KEY (`id`),
-	INDEX `user_consume_history_FI_1` (`user_id`),
-	CONSTRAINT `user_consume_history_FK_1`
-		FOREIGN KEY (`user_id`)
-		REFERENCES `user` (`id`)
+	PRIMARY KEY (`id`)
 )Type=InnoDB;
 
 # This restores the fkey checks, after having unset them earlier

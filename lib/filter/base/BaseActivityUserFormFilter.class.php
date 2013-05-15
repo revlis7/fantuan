@@ -14,14 +14,14 @@ class BaseActivityUserFormFilter extends BaseFormFilterPropel
   public function setup()
   {
     $this->setWidgets(array(
-      'activity_id' => new sfWidgetFormPropelChoice(array('model' => 'Activity', 'add_empty' => true)),
-      'user_id'     => new sfWidgetFormPropelChoice(array('model' => 'User', 'add_empty' => true)),
+      'activity_id' => new sfWidgetFormFilterInput(),
+      'user_id'     => new sfWidgetFormFilterInput(),
       'cost'        => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'activity_id' => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Activity', 'column' => 'id')),
-      'user_id'     => new sfValidatorPropelChoice(array('required' => false, 'model' => 'User', 'column' => 'id')),
+      'activity_id' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'user_id'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'cost'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
@@ -41,8 +41,8 @@ class BaseActivityUserFormFilter extends BaseFormFilterPropel
   {
     return array(
       'id'          => 'Number',
-      'activity_id' => 'ForeignKey',
-      'user_id'     => 'ForeignKey',
+      'activity_id' => 'Number',
+      'user_id'     => 'Number',
       'cost'        => 'Number',
     );
   }

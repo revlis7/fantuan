@@ -14,7 +14,7 @@ class BaseGroupForm extends BaseFormPropel
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
       'name'       => new sfWidgetFormInput(),
-      'captain'    => new sfWidgetFormPropelChoice(array('model' => 'User', 'add_empty' => false)),
+      'captain'    => new sfWidgetFormInput(),
       'status'     => new sfWidgetFormInput(),
       'created_at' => new sfWidgetFormDateTime(),
     ));
@@ -22,7 +22,7 @@ class BaseGroupForm extends BaseFormPropel
     $this->setValidators(array(
       'id'         => new sfValidatorPropelChoice(array('model' => 'Group', 'column' => 'id', 'required' => false)),
       'name'       => new sfValidatorString(array('max_length' => 255)),
-      'captain'    => new sfValidatorPropelChoice(array('model' => 'User', 'column' => 'id')),
+      'captain'    => new sfValidatorInteger(),
       'status'     => new sfValidatorInteger(),
       'created_at' => new sfValidatorDateTime(array('required' => false)),
     ));

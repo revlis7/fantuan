@@ -14,14 +14,14 @@ class BaseGroupUserFormFilter extends BaseFormFilterPropel
   public function setup()
   {
     $this->setWidgets(array(
-      'group_id'   => new sfWidgetFormPropelChoice(array('model' => 'Group', 'add_empty' => true)),
-      'user_id'    => new sfWidgetFormPropelChoice(array('model' => 'User', 'add_empty' => true)),
+      'group_id'   => new sfWidgetFormFilterInput(),
+      'user_id'    => new sfWidgetFormFilterInput(),
       'created_at' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'group_id'   => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Group', 'column' => 'id')),
-      'user_id'    => new sfValidatorPropelChoice(array('required' => false, 'model' => 'User', 'column' => 'id')),
+      'group_id'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'user_id'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'created_at' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDate(array('required' => false)))),
     ));
 
@@ -41,8 +41,8 @@ class BaseGroupUserFormFilter extends BaseFormFilterPropel
   {
     return array(
       'id'         => 'Number',
-      'group_id'   => 'ForeignKey',
-      'user_id'    => 'ForeignKey',
+      'group_id'   => 'Number',
+      'user_id'    => 'Number',
       'created_at' => 'Date',
     );
   }
