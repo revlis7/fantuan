@@ -1,5 +1,5 @@
 <p>Group: <strong><?php echo $group; ?></strong></p>
-
+<p>Fund: <strong><?php echo $fund; ?></strong></p>
 <p>Members: </p>
 <ul>
   <li><strong><a href="<?php echo url_for('@user?name='.$captain); ?>"><?php echo $captain; ?></a></strong> - captain</li>

@@ -8,5 +8,9 @@ class groupActions extends sfActions
     $this->group   = $group;
     $this->captain = $group->getCaptainProfile();
     $this->members = $group->getMembers();
+    $this->fund    = 0;
+    foreach ($this->members as $member) {
+      $this->fund += $member->getBalance();
+    }
   }
 }
