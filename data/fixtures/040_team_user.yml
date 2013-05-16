@@ -1,0 +1,19 @@
+TeamUser:
+  1:
+    team_id:     1
+    user_id:     1
+  2:
+    team_id:     1
+    user_id:     2
+  3:
+    team_id:     1
+    user_id:     3
+  4:
+    team_id:     1
+    user_id:     4
+  5:
+    team_id:     2
+    user_id:     4
+  6:
+    team_id:     2
+    user_id:     3
