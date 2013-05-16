@@ -8,16 +8,16 @@ propel:
     status:       { type: integer, required: true }
     created_at:   ~
 
-  groups:
+  team:
     id:           ~
     name:         { type: varchar(255), required: true, index: unique }
     captain:      { type: integer, required: true }
     status:       { type: integer, required: true }
     created_at:   ~
 
-  group_user:
+  team_user:
     id:           ~
-    group_id:     { type: integer, required: true }
+    team_id:      { type: integer, required: true }
     user_id:      { type: integer, required: true }
     created_at:   ~
 

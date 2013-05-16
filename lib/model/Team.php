@@ -1,6 +1,6 @@
 <?php
 
-class Group extends BaseGroup
+class Team extends BaseTeam
 {
   public function __toString()
   {
@@ -16,8 +16,8 @@ class Group extends BaseGroup
   public function getMembers()
   {
     $criteria = new Criteria();
-    $criteria->addJoin(GroupUserPeer::USER_ID, UserPeer::ID);
-    $criteria->add(GroupUserPeer::GROUP_ID, $this->getId());
+    $criteria->addJoin(TeamUserPeer::USER_ID, TeamPeer::ID);
+    $criteria->add(TeamUserPeer::TEAM_ID, $this->getId());
 
     return UserPeer::doSelect($criteria);
   }

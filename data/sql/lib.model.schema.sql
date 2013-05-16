@@ -25,13 +25,13 @@ CREATE TABLE `user`
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
-#-- group
+#-- team
 #-----------------------------------------------------------------------------
 
-DROP TABLE IF EXISTS `group`;
+DROP TABLE IF EXISTS `team`;
 
 
-CREATE TABLE `group`
+CREATE TABLE `team`
 (
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255)  NOT NULL,
@@ -39,20 +39,20 @@ CREATE TABLE `group`
 	`status` INTEGER  NOT NULL,
 	`created_at` DATETIME,
 	PRIMARY KEY (`id`),
-	UNIQUE KEY `group_U_1` (`name`)
+	UNIQUE KEY `team_U_1` (`name`)
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
-#-- group_user
+#-- team_user
 #-----------------------------------------------------------------------------
 
-DROP TABLE IF EXISTS `group_user`;
+DROP TABLE IF EXISTS `team_user`;
 
 
-CREATE TABLE `group_user`
+CREATE TABLE `team_user`
 (
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
-	`group_id` INTEGER  NOT NULL,
+	`team_id` INTEGER  NOT NULL,
 	`user_id` INTEGER  NOT NULL,
 	`created_at` DATETIME,
 	PRIMARY KEY (`id`)

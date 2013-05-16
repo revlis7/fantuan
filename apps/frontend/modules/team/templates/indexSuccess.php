@@ -1,4 +1,4 @@
-<p>Group: <strong><?php echo $group; ?></strong></p>
+<p>Team: <strong><?php echo $team; ?></strong></p>
 <p>Fund: <strong><?php echo $fund; ?></strong></p>
 <p>Members: </p>
 <ul>

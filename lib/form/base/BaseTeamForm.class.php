@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Group form base class.
+ * Team form base class.
  *
  * @package    fantuan
  * @subpackage form
  * @author     Your name here
  */
-class BaseGroupForm extends BaseFormPropel
+class BaseTeamForm extends BaseFormPropel
 {
   public function setup()
   {
@@ -20,7 +20,7 @@ class BaseGroupForm extends BaseFormPropel
     ));
 
     $this->setValidators(array(
-      'id'         => new sfValidatorPropelChoice(array('model' => 'Group', 'column' => 'id', 'required' => false)),
+      'id'         => new sfValidatorPropelChoice(array('model' => 'Team', 'column' => 'id', 'required' => false)),
       'name'       => new sfValidatorString(array('max_length' => 255)),
       'captain'    => new sfValidatorInteger(),
       'status'     => new sfValidatorInteger(),
@@ -28,10 +28,10 @@ class BaseGroupForm extends BaseFormPropel
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorPropelUnique(array('model' => 'Group', 'column' => array('name')))
+      new sfValidatorPropelUnique(array('model' => 'Team', 'column' => array('name')))
     );
 
-    $this->widgetSchema->setNameFormat('group[%s]');
+    $this->widgetSchema->setNameFormat('team[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -40,7 +40,7 @@ class BaseGroupForm extends BaseFormPropel
 
   public function getModelName()
   {
-    return 'Group';
+    return 'Team';
   }
 
 

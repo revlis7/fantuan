@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Group form.
+ * TeamUser filter form.
  *
  * @package    fantuan
- * @subpackage form
+ * @subpackage filter
  * @author     Your name here
  */
-class GroupForm extends BaseGroupForm
+class TeamUserFormFilter extends BaseTeamUserFormFilter
 {
   public function configure()
   {

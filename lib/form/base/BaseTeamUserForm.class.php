@@ -1,31 +1,31 @@
 <?php
 
 /**
- * GroupUser form base class.
+ * TeamUser form base class.
  *
  * @package    fantuan
  * @subpackage form
  * @author     Your name here
  */
-class BaseGroupUserForm extends BaseFormPropel
+class BaseTeamUserForm extends BaseFormPropel
 {
   public function setup()
   {
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
-      'group_id'   => new sfWidgetFormInput(),
+      'team_id'    => new sfWidgetFormInput(),
       'user_id'    => new sfWidgetFormInput(),
       'created_at' => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
-      'id'         => new sfValidatorPropelChoice(array('model' => 'GroupUser', 'column' => 'id', 'required' => false)),
-      'group_id'   => new sfValidatorInteger(),
+      'id'         => new sfValidatorPropelChoice(array('model' => 'TeamUser', 'column' => 'id', 'required' => false)),
+      'team_id'    => new sfValidatorInteger(),
       'user_id'    => new sfValidatorInteger(),
       'created_at' => new sfValidatorDateTime(array('required' => false)),
     ));
 
-    $this->widgetSchema->setNameFormat('group_user[%s]');
+    $this->widgetSchema->setNameFormat('team_user[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -34,7 +34,7 @@ class BaseGroupUserForm extends BaseFormPropel
 
   public function getModelName()
   {
-    return 'GroupUser';
+    return 'TeamUser';
   }
 
 

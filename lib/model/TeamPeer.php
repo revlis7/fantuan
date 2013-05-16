@@ -1,8 +1,8 @@
 <?php
 
-class GroupPeer extends BaseGroupPeer
+class TeamPeer extends BaseTeamPeer
 {
-  public static function getGroupByName($name)
+  public static function getTeamByName($name)
   {
     $criteria = new Criteria();
     $criteria->add(self::NAME, $name);

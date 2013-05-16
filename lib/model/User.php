@@ -12,24 +12,24 @@ class User extends BaseUser
     return parent::setPassword(md5($password));
   }
 
-  public function getChargedGroups()
+  public function getChargedTeams()
   {
     $criteria = new Criteria();
-    $criteria->addJoin(UserPeer::ID, GroupPeer::CAPTAIN);
+    $criteria->addJoin(UserPeer::ID, TeamPeer::CAPTAIN);
     $criteria->add(UserPeer::ID, $this->getId());
-    $criteria->addAscendingOrderByColumn(GroupPeer::NAME);
+    $criteria->addAscendingOrderByColumn(TeamPeer::NAME);
 
-    return GroupPeer::doSelect($criteria);
+    return TeamPeer::doSelect($criteria);
   }
 
-  public function getJoinedGroups()
+  public function getJoinedTeams()
   {
     $criteria = new Criteria();
-    $criteria->addJoin(GroupUserPeer::GROUP_ID, GroupPeer::ID);
-    $criteria->add(GroupUserPeer::USER_ID, $this->getId());
-    $criteria->addAscendingOrderByColumn(GroupPeer::NAME);
+    $criteria->addJoin(TeamUserPeer::TEAM_ID, TeamPeer::ID);
+    $criteria->add(TeamUserPeer::USER_ID, $this->getId());
+    $criteria->addAscendingOrderByColumn(TeamPeer::NAME);
 
-    return GroupPeer::doSelect($criteria);
+    return TeamPeer::doSelect($criteria);
   }
 
   public function getActivities()

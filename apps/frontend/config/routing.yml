@@ -2,9 +2,9 @@ user:
   url:   /user/:name
   param: { module: user, action: index }
 
-group:
-  url:   /group/:name
-  param: { module: group, action: index }
+team:
+  url:   /team/:name
+  param: { module: team, action: index }
 
 activity:
   url:   /activity/:desc

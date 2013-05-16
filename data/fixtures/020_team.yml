@@ -1,0 +1,13 @@
+team:
+  alpha:
+    name:        alpha
+    captain:     1
+    status:      1
+  beta:
+    name:        beta
+    captain:     4
+    status:      1
+  gamma:
+    name:        gamma
+    captain:     4
+    status:      1

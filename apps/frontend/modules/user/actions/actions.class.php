@@ -14,8 +14,8 @@ class userActions extends sfActions
     }
 
     $this->user           = $user;
-    $this->charged_groups = $user->getChargedGroups();
-    $this->joined_groups  = $user->getJoinedGroups();
+    $this->charged_teams  = $user->getChargedTeams();
+    $this->joined_teams   = $user->getJoinedTeams();
     $this->activities     = $user->getActivities();
   }
 }
