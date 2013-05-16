@@ -7,11 +7,11 @@ class Team extends BaseTeam
     return $this->getName();
   }
 
-  public function getCaptainProfile()
-  {
-    $user_id = $this->getCaptain();
-    return UserPeer::retrieveByPK($user_id);
-  }
+  // public function getCaptainProfile()
+  // {
+  //   $user_id = $this->getCaptain();
+  //   return UserPeer::retrieveByPK($user_id);
+  // }
 
   public function getMembers()
   {
