@@ -1,0 +1,13 @@
+activity:
+  fresh meat:
+    name:        fresh meat
+    desc:        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum erat, vulputate a sollicitudin eget, dapibus nec magna. Nam convallis dignissim arcu, nec dignissim orci viverra at. Praesent auctor rutrum eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Donec dapibus ultrices turpis vel luctus. Vestibulum a justo elit. Suspendisse interdum tristique metus, non vestibulum tellus venenatis quis. Aenean elit erat, malesuada vel interdum eu, vestibulum id velit. Ut vehicula nibh non purus hendrerit tincidunt malesuada mauris tincidunt. Nam dui nisi, feugiat at pretium in, condimentum vel massa. Proin in est eu justo ullamcorper imperdiet. Phasellus dapibus mi dictum leo sodales vitae aliquet velit semper. Mauris euismod dui est. 
+    status:      1
+  drinks:
+    name:        drinks
+    desc:        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum erat, vulputate a sollicitudin eget, dapibus nec magna. Nam convallis dignissim arcu, nec dignissim orci viverra at. Praesent auctor rutrum eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Donec dapibus ultrices turpis vel luctus. Vestibulum a justo elit. Suspendisse interdum tristique metus, non vestibulum tellus venenatis quis. Aenean elit erat, malesuada vel interdum eu, vestibulum id velit. Ut vehicula nibh non purus hendrerit tincidunt malesuada mauris tincidunt. Nam dui nisi, feugiat at pretium in, condimentum vel massa. Proin in est eu justo ullamcorper imperdiet. Phasellus dapibus mi dictum leo sodales vitae aliquet velit semper. Mauris euismod dui est. 
+    status:      1
+  bbq:
+    name:        bbq
+    desc:        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum erat, vulputate a sollicitudin eget, dapibus nec magna. Nam convallis dignissim arcu, nec dignissim orci viverra at. Praesent auctor rutrum eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Donec dapibus ultrices turpis vel luctus. Vestibulum a justo elit. Suspendisse interdum tristique metus, non vestibulum tellus venenatis quis. Aenean elit erat, malesuada vel interdum eu, vestibulum id velit. Ut vehicula nibh non purus hendrerit tincidunt malesuada mauris tincidunt. Nam dui nisi, feugiat at pretium in, condimentum vel massa. Proin in est eu justo ullamcorper imperdiet. Phasellus dapibus mi dictum leo sodales vitae aliquet velit semper. Mauris euismod dui est. 
+    status:      1

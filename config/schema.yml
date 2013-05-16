@@ -6,27 +6,27 @@ propel:
     name:         { type: varchar(255), required: true, index: unique }
     balance:      { type: integer, required: true }
     status:       { type: integer, required: true }
-    created_at:    ~
+    created_at:   ~
 
-  group:
+  groups:
     id:           ~
     name:         { type: varchar(255), required: true, index: unique }
     captain:      { type: integer, required: true }
     status:       { type: integer, required: true }
-    created_at:    ~
+    created_at:   ~
 
   group_user:
     id:           ~
     group_id:     { type: integer, required: true }
     user_id:      { type: integer, required: true }
-    created_at:    ~
+    created_at:   ~
 
   activity:
     id:           ~
+    name:         { type: varchar(255), required: true }
     desc:         { type: longvarchar, required: true }
-    cost:         { type: integer, required: true }
     status:       { type: integer, required: true }
-    created_at:    ~
+    created_at:   ~
 
   activity_user:
     id:           ~
@@ -38,10 +38,10 @@ propel:
     id:           ~
     user_id:      { type: integer, required: true }
     price:        { type: integer, required: true }
-    created_at:    ~
+    created_at:   ~
 
   user_consume_history:
     id:           ~
     user_id:      { type: integer, required: true }
     price:        { type: integer, required: true }
-    created_at:    ~
+    created_at:   ~

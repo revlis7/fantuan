@@ -68,8 +68,8 @@ DROP TABLE IF EXISTS `activity`;
 CREATE TABLE `activity`
 (
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(255)  NOT NULL,
 	`desc` TEXT  NOT NULL,
-	`cost` INTEGER  NOT NULL,
 	`status` INTEGER  NOT NULL,
 	`created_at` DATETIME,
 	PRIMARY KEY (`id`)

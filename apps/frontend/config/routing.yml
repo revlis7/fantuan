@@ -6,6 +6,10 @@ group:
   url:   /group/:name
   param: { module: group, action: index }
 
+activity:
+  url:   /activity/:desc
+  param: { module: activity, action: index }
+
 login:
   url:   /login
   param: { module: login, action: index }

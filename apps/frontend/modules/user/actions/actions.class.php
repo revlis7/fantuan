@@ -13,10 +13,9 @@ class userActions extends sfActions
       $this->redirect('@user?name='.$this->getUser()->getAttribute('name'));
     }
 
+    $this->user           = $user;
     $this->charged_groups = $user->getChargedGroups();
     $this->joined_groups  = $user->getJoinedGroups();
-
-    $this->name    = $user->getName();
-    $this->balance = $user->getBalance();
+    $this->activities     = $user->getActivities();
   }
 }

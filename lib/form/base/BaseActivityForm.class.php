@@ -13,16 +13,16 @@ class BaseActivityForm extends BaseFormPropel
   {
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
+      'name'       => new sfWidgetFormInput(),
       'desc'       => new sfWidgetFormTextarea(),
-      'cost'       => new sfWidgetFormInput(),
       'status'     => new sfWidgetFormInput(),
       'created_at' => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
       'id'         => new sfValidatorPropelChoice(array('model' => 'Activity', 'column' => 'id', 'required' => false)),
+      'name'       => new sfValidatorString(array('max_length' => 255)),
       'desc'       => new sfValidatorString(),
-      'cost'       => new sfValidatorInteger(),
       'status'     => new sfValidatorInteger(),
       'created_at' => new sfValidatorDateTime(array('required' => false)),
     ));

@@ -32,6 +32,16 @@ class User extends BaseUser
     return GroupPeer::doSelect($criteria);
   }
 
+  public function getActivities()
+  {
+    $criteria = new Criteria();
+    $criteria->addJoin(ActivityUserPeer::ACTIVITY_ID, ActivityPeer::ID);
+    $criteria->add(ActivityUserPeer::USER_ID, $this->getId());
+    $criteria->addDescendingOrderByColumn(ActivityPeer::CREATED_AT);
+
+    return ActivityPeer::doSelect($criteria);
+  }
+
   public function save(PropelPDO $con = null)
   {
     if ($this->isNew()) {
