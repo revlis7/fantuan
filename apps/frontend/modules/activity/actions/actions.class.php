@@ -8,12 +8,12 @@ class activityActions extends sfActions
       $this->redirect('login');
     }
 
-    $activity = ActivityPeer::retrieveByPK($request->getParameter('id'));
+    $activity = ActivityPeer::getByName($request->getParameter('name'));
     if (!$activity) {
       return sfView::ERROR;
     }
 
-    $this->members = $activity->getMembers();
-    var_dump($this->members);exit;
+    $this->activity = $activity;
+    $this->members  = $activity->getMembers();
   }
 }

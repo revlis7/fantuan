@@ -7,7 +7,7 @@ team:
   param: { module: team, action: index }
 
 activity:
-  url:   /activity/:desc
+  url:   /activity/:name
   param: { module: activity, action: index }
 
 login:

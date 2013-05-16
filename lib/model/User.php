@@ -42,6 +42,16 @@ class User extends BaseUser
     return ActivityPeer::doSelect($criteria);
   }
 
+  public function getActivityCost($activity)
+  {
+    $criteria = new Criteria();
+    $criteria->add(ActivityUserPeer::USER_ID, $this->getId());
+    $criteria->add(ActivityUserPeer::ACTIVITY_ID, $activity->getId());
+
+    $row = ActivityUserPeer::doSelectOne($criteria);
+    return $row->getCost();
+  }
+
   public function save(PropelPDO $con = null)
   {
     if ($this->isNew()) {

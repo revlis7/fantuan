@@ -16,7 +16,7 @@ class Team extends BaseTeam
   public function getMembers()
   {
     $criteria = new Criteria();
-    $criteria->addJoin(TeamUserPeer::USER_ID, TeamPeer::ID);
+    $criteria->addJoin(TeamUserPeer::USER_ID, UserPeer::ID);
     $criteria->add(TeamUserPeer::TEAM_ID, $this->getId());
 
     return UserPeer::doSelect($criteria);
