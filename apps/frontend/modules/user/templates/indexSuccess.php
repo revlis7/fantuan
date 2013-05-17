@@ -17,4 +17,3 @@
 <li><?php echo $activity->getCreatedAt(); ?> <strong><a href="<?php echo url_for('@activity?name='.$activity); ?>"><?php echo $activity; ?></a></strong> - <?php echo $activity->getMemberCost($user); ?> (Total: <?php echo $activity->getCost(); ?>)</li>
 <?php endforeach; ?>
 </ul>
-<a href="<?php echo url_for('@logout'); ?>">Logout</a>

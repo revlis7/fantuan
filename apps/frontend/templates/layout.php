@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="/favicon.ico" />
   </head>
   <body>
+    <?php include_component('login', 'toolbar'); ?>
     <?php echo $sf_content ?>
   </body>
 </html>

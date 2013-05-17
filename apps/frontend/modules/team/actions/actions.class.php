@@ -6,7 +6,6 @@ class teamActions extends sfActions
   {
     $team = TeamPeer::getTeamByName($request->getParameter('name'));
     $this->team    = $team;
-    // $this->captain = $team->getCaptainProfile();
     $this->members = $team->getMembers();
     $this->fund    = 0;
     foreach ($this->members as $member) {
