@@ -1,4 +1,5 @@
 <p>Activity Name: <strong><?php echo $activity; ?></strong></p>
+<p>Total Cost: <strong><?php echo $activity->getCost(); ?></strong></p>
 <p>Members: </p>
 <ul>
 <?php foreach($members as $member): ?>

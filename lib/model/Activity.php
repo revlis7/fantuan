@@ -29,4 +29,14 @@ class Activity extends BaseActivity
     }
     return $cost;
   }
+
+  public function getMemberCost($user)
+  {
+    $criteria = new Criteria();
+    $criteria->add(ActivityUserPeer::ACTIVITY_ID, $this->getId());
+    $criteria->add(ActivityUserPeer::USER_ID, $user->getId());
+
+    $row = ActivityUserPeer::doSelectOne($criteria);
+    return $row->getCost();
+  }
 }
