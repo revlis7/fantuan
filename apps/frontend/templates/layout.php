@@ -7,7 +7,14 @@
     <link rel="shortcut icon" href="/favicon.ico" />
   </head>
   <body>
-    <?php include_component('login', 'toolbar'); ?>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a href="#" class="brand">Fantuan</a>
+          <?php include_component('login', 'toolbar'); ?>
+        </div>
+      </div>
+    </div>
     <?php echo $sf_content ?>
   </body>
 </html>
