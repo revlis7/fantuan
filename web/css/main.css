@@ -10,3 +10,8 @@ body {
   max-width: 300px;
   padding: 19px 29px 29px;
 }
+.profile {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+}
