@@ -21,4 +21,14 @@ class Team extends BaseTeam
 
     return UserPeer::doSelect($criteria);
   }
+
+  public function getFund()
+  {
+    $members = $this->getMembers();
+    $fund    = 0;
+    foreach ($members as $member) {
+      $fund += $member->getBalance();
+    }
+    return $fund;
+  }
 }
