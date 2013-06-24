@@ -1,11 +1,3 @@
-<style>
-.activities .news {
-  border-top:1px solid #F1F1F1;
-}
-.activities .news:first-child {
-  border-top:0px;
-}
-</style>
 <div class="container">
   <div class="row">
     <div class="span8">
@@ -13,8 +5,8 @@
       <div class="activities">
       <?php foreach($activities as $activity): ?>
         <div class="news">
-          <p><?php echo $activity->getCreatedAt(); ?></p>
-          <p><strong><a href="<?php echo url_for('@activity?name='.$activity); ?>"><?php echo $activity; ?></a></strong></p>
+          <p></p>
+          <p><strong><a href="<?php echo url_for('@activity?name='.$activity); ?>"><?php echo $activity; ?></a></strong><time datetime="<?php echo $activity->getCreatedAt(); ?>"><?php echo $activity->getCreatedAt(); ?></time></p>
           <p><?php echo sprintf('%.2f', $activity->getMemberCost($user) / 100); ?> 
           (Total: <?php echo sprintf('%.2f', $activity->getCost() / 100); ?>)</p>
         </div>
@@ -43,6 +35,8 @@
     </div>
   </div>
 </div>
+<?php
+/*
 <p>Name: <strong><?php echo $user->getName(); ?></strong></p>
 <p>Balance: <strong><?php echo sprintf('%.2f', $user->getBalance() / 100); ?></strong></p>
 <p>Joined Teams: </p>
@@ -67,3 +61,4 @@
 </li>
 <?php endforeach; ?>
 </ul>
+*/
