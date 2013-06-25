@@ -17,6 +17,7 @@ body {
 }
 .activities .news {
   border-top: 1px solid #F1F1F1;
+  padding: 10px 0 0;
 }
 .activities .news time {
   margin: 0px 5px;
@@ -24,5 +25,12 @@ body {
   color: #BBBBBB;
 }
 .activities .news:first-child {
+  border-top: 0px;
+}
+.members .member {
+  border-top: 1px solid #F1F1F1;
+  padding: 10px 0 0;
+}
+.members .member:first-child {
   border-top: 0px;
 }

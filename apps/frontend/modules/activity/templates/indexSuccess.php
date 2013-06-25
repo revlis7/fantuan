@@ -1,4 +1,4 @@
-<p>Activity Name: <strong><?php echo $activity; ?></strong></p>
+<p>活动列表: <strong><?php echo $activity; ?></strong></p>
 <p>Total Cost: <strong><?php echo sprintf('%.2f', $activity->getCost() / 100); ?></strong></p>
 <p>Members: </p>
 <ul>
