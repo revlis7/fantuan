@@ -18,8 +18,8 @@
     <div class="span4">
       <div class="profile">
         <div>
-          <p>饭团名称: <strong><?php echo $team; ?></strong></p>
-          <p>团费剩余: <strong><?php echo sprintf('%.2f', $fund / 100); ?></strong></p>
+          <p>饭团名称： <strong><?php echo $team; ?></strong></p>
+          <p>团费剩余： <strong><?php echo sprintf('%.2f', $fund / 100); ?></strong></p>
         </div>
       </div>
     </div>

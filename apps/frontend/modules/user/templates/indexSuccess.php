@@ -17,17 +17,17 @@
           <!-- <img src="http://www.gravatar.com/avatar/8090d881e6e9ed8b0add27f5432573fc" width="80" height="80" /> -->
           <p><b><?php echo $user->getName(); ?></b></p>
           <p><?php echo sprintf('%.2f', $user->getBalance() / 100); ?></p>
-          <p>加入的饭团: </p>
-          <ul>
+          <p>加入的饭团： </p>
+          <div>
           <?php foreach ($charged_teams as $charged_team): ?>
-            <li><strong><a href="<?php echo url_for('@team?name='.$charged_team); ?>"><?php echo $charged_team; ?></a></strong> - 团长 <?php echo sprintf('%.2f', $charged_team->getFund() / 100); ?></li>
+            <p><strong><a href="<?php echo url_for('@team?name='.$charged_team); ?>"><?php echo $charged_team; ?></a></strong> - 团长 <?php echo sprintf('%.2f', $charged_team->getFund() / 100); ?></p>
           <?php endforeach; ?>
           <?php foreach ($joined_teams as $joined_team): ?>
             <?php if ($joined_team->getCaptain() != $user->getId()): ?>
-            <li><strong><a href="<?php echo url_for('@team?name='.$joined_team); ?>"><?php echo $joined_team; ?></a></strong></li>
+            <p><strong><a href="<?php echo url_for('@team?name='.$joined_team); ?>"><?php echo $joined_team; ?></a></strong></p>
             <?php endif; ?>
           <?php endforeach; ?>
-          </ul>
+          </div>
         </div>
       </div>
     </div>
